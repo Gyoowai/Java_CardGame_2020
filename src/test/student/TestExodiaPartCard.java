@@ -12,32 +12,37 @@ import card.cards.ExodiaCharacterCard;
 import card.cards.ExodiaPartCard;
 import player.Player;
 
-public class TestExodiaPartCard {
-	
+public class TestExodiaPartCard
+{
+
 	Player player;
 
-	ExodiaPartCard exodiaP1 = new ExodiaPartCard("Part1" , 10);
-	ExodiaPartCard exodiaP2 = new ExodiaPartCard("Part2" , 20);
-	ExodiaPartCard exodiaP3 = new ExodiaPartCard("Part3" , 25);
-	ExodiaCharacterCard exodiaChar = new ExodiaCharacterCard(); 
+	ExodiaPartCard exodiaP1 = new ExodiaPartCard("Part1", 10);
+	ExodiaPartCard exodiaP2 = new ExodiaPartCard("Part2", 20);
+	ExodiaPartCard exodiaP3 = new ExodiaPartCard("Part3", 25);
+	ExodiaCharacterCard exodiaChar = new ExodiaCharacterCard();
 
-	ItemCard[] inventory1 = {exodiaP1,exodiaP2,exodiaP3,exodiaP1};;
-	
+	ItemCard[] inventory1 =
+	{ exodiaP1, exodiaP2, exodiaP3, exodiaP1 };;
+
 	@Before
-	public void setUp() {
+	public void setUp()
+	{
 		player = new Player("testPlayer", 100, 50, 30);
 	}
-	
+
 	@Test
-	public void testConstructor() {
-		
+	public void testConstructor()
+	{
+
 		assertEquals("Part1", exodiaP1.getName());
 		assertEquals("Assemble 4 of Exodia part card to win the game", exodiaP1.getDescription());
 
 	}
-	
+
 	@Test
-	public void testEquipItem() {		
+	public void testEquipItem()
+	{
 		exodiaP1.equipItem(player);
 		assertEquals(100, player.getMaxLifePoint());
 		assertEquals(50, player.getAttack());
@@ -54,16 +59,18 @@ public class TestExodiaPartCard {
 		assertEquals(100, player.getMaxLifePoint());
 		assertEquals(50, player.getAttack());
 		assertEquals(95, player.getDefense());
-		
-		for(int i = 0 ; i < 4 ; i++) {
+
+		for (int i = 0; i < 4; i++)
+		{
 			assertEquals(inventory1[i], player.getInventory()[i]);
 		}
 	}
-	
-	//Fill Code Here!!!
+
+	// Fill Code Here!!!
 	// 1.testEquipItemExodiaCase
 	@Test
-	public void testEquipItemExodiaCase() {
+	public void testEquipItemExodiaCase()
+	{
 		player.setAssignedCharacter(exodiaChar);
 		exodiaP1.equipItem(player);
 		assertEquals(100, player.getMaxLifePoint());
@@ -81,8 +88,9 @@ public class TestExodiaPartCard {
 		assertEquals(100, player.getMaxLifePoint());
 		assertEquals(50, player.getAttack());
 		assertEquals(160, player.getDefense());
-		
-		for(int i = 0 ; i < 4 ; i++) {
+
+		for (int i = 0; i < 4; i++)
+		{
 			assertEquals(inventory1[i], player.getInventory()[i]);
 		}
 	}

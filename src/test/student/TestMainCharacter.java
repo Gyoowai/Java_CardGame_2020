@@ -56,7 +56,6 @@ public class TestMainCharacter
 		assertEquals(115, player.getDefense());
 	}
 
-	
 	@Test
 	public void testSwitchCharacter()
 	{
@@ -74,15 +73,15 @@ public class TestMainCharacter
 		assertEquals(100, player.getAttack());
 		assertEquals(80, player.getDefense());
 	}
-	
+
 	@Test
-	public void testSacrifice() {
+	public void testSacrifice()
+	{
 		player.setCurrentLifePoint(60);
 		testChar.sacrifice(player);
 		assertEquals(110, player.getCurrentLifePoint());
-		
-		BasicCharacterCard testChar3 
-		= new BasicCharacterCard("Test Character 3", "test character 3", 150, 40, 20);
+
+		BasicCharacterCard testChar3 = new BasicCharacterCard("Test Character 3", "test character 3", 150, 40, 20);
 		player.setCurrentLifePoint(50);
 		testChar3.sacrifice(player);
 		assertEquals(100, player.getCurrentLifePoint());

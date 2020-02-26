@@ -55,22 +55,23 @@ public class Deck
 		if (slotNumber >= deckSize)
 		{
 			throw new RemoveCardFailedException("Number you insert exceed deck size");
-		}
-		else {
-		Card removed = deckList[slotNumber];
-		deckSize--;
-		Card[] deckList2 = new Card[deckSize];
-		for (int i = 0; i < deckSize+1; i++)
+		} else
 		{
-			if (i < slotNumber)
+			Card removed = deckList[slotNumber];
+			deckSize--;
+			Card[] deckList2 = new Card[deckSize];
+			for (int i = 0; i < deckSize + 1; i++)
 			{
-				deckList2[i] = deckList[i];
-			}else if(i > slotNumber) {
-				deckList2[i-1] = deckList[i];
+				if (i < slotNumber)
+				{
+					deckList2[i] = deckList[i];
+				} else if (i > slotNumber)
+				{
+					deckList2[i - 1] = deckList[i];
+				}
 			}
-		}
-		
-		return removed;
+
+			return removed;
 		}
 		// You can used Arrays.copyOf(Original Array, New Length) to create new arrays
 		// with bigger size
