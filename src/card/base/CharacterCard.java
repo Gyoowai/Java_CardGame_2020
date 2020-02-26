@@ -24,9 +24,9 @@ public abstract class CharacterCard extends Card {
 			, setAssignedCharacter (CharacterCard)
 			from Player class
 		 */
-		player.setNewCharacterLifePoint(lifePoint);
-		player.setAttack(attackPoint);
-		player.setDefense(defensePoint);
+		player.setNewCharacterLifePoint(this.lifePoint);
+		player.setAttack(this.attackPoint);
+		player.setDefense(this.defensePoint);
 		player.setAssignedCharacter(this);
 	}
 	

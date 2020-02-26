@@ -8,6 +8,7 @@ public abstract class ItemCard extends Card {
 	protected int lpBonus; 
 	protected int attackBonus; 
 	protected int defenseBonus;
+	
 	public ItemCard(String name, String description, int lpBonus , int attackBonus, int defenseBonus) {
 		super(name,description);
 		this.lpBonus=lpBonus;

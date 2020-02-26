@@ -6,11 +6,11 @@ import player.Player;
 
 //You CAN modify the first line
 public class ExodiaCharacterCard extends CharacterCard{
-	static String name = "Exodia the Forbidden One";
-	static String description = "With 4 or more Exodia Part Card equiped, you win the game";
-	static int lifePoint = 800;
-	static int attackPoint = 0;
-	static int defensePoint = 25;
+	protected static String name = "Exodia the Forbidden One";
+	protected static String description = "With 4 or more Exodia Part Card equiped, you win the game";
+	protected static int lifePoint = 800;
+	protected static int attackPoint = 0;
+	protected static int defensePoint = 25;
 	
 	public ExodiaCharacterCard() {
 		super(name,description,lifePoint,attackPoint,defensePoint);

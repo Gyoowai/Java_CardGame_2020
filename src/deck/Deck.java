@@ -13,7 +13,7 @@ public class Deck {
 	private int deckSize;
 	public Deck(String name, Card[] deckList) {
 		deckSize = deckList.length;
-		deckList = new Card[deckSize];
+		this.deckList = new Card[deckSize];
 		this.name=name;
 		this.deckList=deckList;
 		
@@ -28,13 +28,14 @@ public class Deck {
 		Card[] deckList2 = new Card[deckSize];
 		deckList2 = Arrays.copyOf(deckList, deckSize);
 		deckList2[deckSize-1]=card;
+		deckList=deckList2;
 		int checker=0;
 		for (Card i:deckList) {
 			if (i.equals(card)) {
 				checker++;
 			}
 		}
-		if(checker==4) {throw new InsertCardFailedException();}
+		if(checker==5) {throw new InsertCardFailedException("You can only put 4 of the same cards into the deck");}
 		return deckSize;
 		//You can used Arrays.copyOf(Original Array, New Length) to create new arrays with bigger size
 		//Must return new deckSize

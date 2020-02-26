@@ -5,8 +5,8 @@ import player.Player;
 
 //You CAN modify the first line
 public class MainCharacterCard extends CharacterCard{
-	private float levelUpBonus;
-	private int level;
+	protected float levelUpBonus;
+	protected int level;
 	public MainCharacterCard(String name, String description, int lifePoint, int attackPoint, int defensePoint,float levelUpBonus) {
 		super(name,description,lifePoint,attackPoint,defensePoint);
 		this.levelUpBonus = levelUpBonus;
@@ -17,7 +17,7 @@ public class MainCharacterCard extends CharacterCard{
 		return player.getCurrentLifePoint();
 	}
 	public float levelUp (Player player) {
-		player.setCurrentLifePoint((int)(player.getCurrentLifePoint()*(1+this.levelUpBonus)));
+		player.setNewCharacterLifePoint((int)(player.getCurrentLifePoint()*(1+this.levelUpBonus)));
 		player.setAttack((int)(player.getAttack()*(1+this.levelUpBonus)));
 		player.setDefense((int)(player.getDefense()*(1+this.levelUpBonus)));
 		level++;
