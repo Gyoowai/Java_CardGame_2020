@@ -14,7 +14,6 @@ public class ExodiaPartCard extends ItemCard{
 	}
 	public void equipItem(Player player) {
 		player.addInventory(this);
-		player.setCurrentLifePoint(player.getCurrentLifePoint()+this.lpBonus);
 		player.setMaxLifePoint(player.getMaxLifePoint()+this.lpBonus);
 		player.setDefense(player.getDefense()+this.defenseBonus);
 		if(player.getAssignedCharacter() instanceof ExodiaCharacterCard) {

@@ -16,7 +16,7 @@ public class TestExodiaPartCard {
 	
 	Player player;
 
-	ExodiaPartCard exodiaP1 = new ExodiaPartCard("Part1" ,10);
+	ExodiaPartCard exodiaP1 = new ExodiaPartCard("Part1" , 10);
 	ExodiaPartCard exodiaP2 = new ExodiaPartCard("Part2" , 20);
 	ExodiaPartCard exodiaP3 = new ExodiaPartCard("Part3" , 25);
 	ExodiaCharacterCard exodiaChar = new ExodiaCharacterCard(); 
@@ -62,6 +62,28 @@ public class TestExodiaPartCard {
 	
 	//Fill Code Here!!!
 	// 1.testEquipItemExodiaCase
-
-
+	@Test
+	public void testEquipItemExodiaCase() {
+		player.setAssignedCharacter(exodiaChar);
+		exodiaP1.equipItem(player);
+		assertEquals(100, player.getMaxLifePoint());
+		assertEquals(50, player.getAttack());
+		assertEquals(50, player.getDefense());
+		exodiaP2.equipItem(player);
+		assertEquals(100, player.getMaxLifePoint());
+		assertEquals(50, player.getAttack());
+		assertEquals(90, player.getDefense());
+		exodiaP3.equipItem(player);
+		assertEquals(100, player.getMaxLifePoint());
+		assertEquals(50, player.getAttack());
+		assertEquals(140, player.getDefense());
+		exodiaP1.equipItem(player);
+		assertEquals(100, player.getMaxLifePoint());
+		assertEquals(50, player.getAttack());
+		assertEquals(160, player.getDefense());
+		
+		for(int i = 0 ; i < 4 ; i++) {
+			assertEquals(inventory1[i], player.getInventory()[i]);
+		}
+	}
 }

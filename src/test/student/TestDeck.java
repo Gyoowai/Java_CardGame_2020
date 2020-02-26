@@ -110,6 +110,18 @@ public class TestDeck {
 	//Fill Code Here!!!
 	// 1.testRemoveCard
 	// 2.testNonExsistanceRemoveCard
-
+	@Test
+	public void testRemoveCard() {
+		try {
+			deck3.removeCard(3);
+		} catch (RemoveCardFailedException e) {
+			fail("s");
+		}
+		
+		assertThrows(RemoveCardFailedException.class, () -> {
+			deck3.removeCard(100);
+		});
+		
+	}
 	
 }
