@@ -115,7 +115,7 @@ public class TestDeck {
 		try {
 			deck3.removeCard(3);
 		} catch (RemoveCardFailedException e) {
-			fail("s");
+			fail("Expected no RemoveCardFailedException");
 		}
 		
 		assertThrows(RemoveCardFailedException.class, () -> {
