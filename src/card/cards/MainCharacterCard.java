@@ -6,8 +6,8 @@ import player.Player;
 //You CAN modify the first line
 public class MainCharacterCard extends CharacterCard
 {
-	protected float levelUpBonus;
-	protected int level;
+	private float levelUpBonus;
+	private int level;
 
 	public MainCharacterCard(String name, String description, int lifePoint, int attackPoint, int defensePoint,
 			float levelUpBonus)

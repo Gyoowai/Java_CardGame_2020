@@ -7,15 +7,12 @@ import player.Player;
 //You CAN modify the first line
 public class ExodiaCharacterCard extends CharacterCard
 {
-	protected static String name = "Exodia the Forbidden One";
-	protected static String description = "With 4 or more Exodia Part Card equiped, you win the game";
-	protected static int lifePoint = 800;
-	protected static int attackPoint = 0;
-	protected static int defensePoint = 25;
+	final static String name = "Exodia the Forbidden One";
+	final static String description = "With 4 or more Exodia Part Card equiped, you win the game";
 
 	public ExodiaCharacterCard()
 	{
-		super(name, description, lifePoint, attackPoint, defensePoint);
+		super(name, description, 800, 0, 25);
 
 	}
 

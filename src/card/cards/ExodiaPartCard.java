@@ -7,9 +7,9 @@ import player.Player;
 public class ExodiaPartCard extends ItemCard
 {
 
-	protected static String description = "Assemble 4 of Exodia part card to win the game";
-	protected static int lpBonus = 0;
-	protected static int attackBonus = 0;
+	final static String description = "Assemble 4 of Exodia part card to win the game";
+	final static int lpBonus = 0;
+	final static int attackBonus = 0;
 
 	public ExodiaPartCard(String name, int defense)
 	{
